@@ -7,10 +7,23 @@ let linkedList = {
 }
 
 reverseList = list => {
-  console.log(list.head.value)
-}
+  
+  let prev = null
+  let next = null
+  let head = list.head
+  console.log(head.next)
 
-// console.log(linkedList)
+  // while (head !== null) {
+  //   next = head.next
+  //   head.next = prev
+  //   prev = head
+  //   head = next
+
+
+
+  // }
+  return prev
+}
 
 let rev = reverseList(linkedList)
 
