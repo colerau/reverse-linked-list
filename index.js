@@ -22,29 +22,6 @@
 //       }
 //   }
 
-reverseList = list => {
-  
-  let prev = null
-  let next = null
-  let head = list.head
-  // console.log(head.next)
-
-  while (head !== null) {
-    next = head.next
-    head.next = prev
-    prev = head
-    head = next
-
-
-
-  }
-  return prev
-}
-
-// let rev = reverseList(linkedList)
-
-// console.log(rev)
-
 class ListNode {
   constructor(data) {
     this.data = data
@@ -58,13 +35,30 @@ class LinkedList {
   }
 }
 
-let node1 = new ListNode(5)
-let node2 = new ListNode(3)
-let node3 = new ListNode(9)
+let node1 = new ListNode(4)
+let node2 = new ListNode(8)
+let node3 = new ListNode(12)
 
 node1.next = node2
 node2.next = node3
 
 let list = new LinkedList(node1)
 
-console.log(list)
+reverseList = list => {
+  let prev = null
+  let next = null
+  let head = list.head
+
+  while (head !== null) {
+    next = head.next 
+    head.next = prev 
+    prev = head 
+    head = next 
+  }
+  return prev 
+}
+
+let res = reverseList(list)
+
+console.log(res)
+
